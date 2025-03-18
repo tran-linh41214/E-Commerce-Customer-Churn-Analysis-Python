@@ -1,3 +1,136 @@
+# 📊 Project Title: E-Commerce Customer Churn Analysis   
+Author: Linh Tran  
+Tools Used: Python  
+
+---
+
+## 📑 Table of Contents  
+1. [📌 Background & Overview](#-background--overview)  
+2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)
+3. [⚒️ Main Process](#-main-process)
+4. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
+
+---
+
+## 📌 Background & Overview  
+
+### Objective:
+### 📖 What is this project about?
+
+This project utilizes **Python and machine learning** to analyze e-commerce customer data and:  
+
+✔️ **Predict potential customer churn** and identify high-risk segments.  
+✔️ **Optimize retention strategies** by detecting early churn indicators.  
+✔️ **Compare different missing value handling methods** to assess their impact on model performance.  
+✔️ **Enhance customer loyalty** through personalized re-engagement initiatives.  
+
+
+### 👤 Who is this project for?  
+
+✔️ **Marketing teams** looking to improve customer retention.  
+✔️ **E-commerce business owners & decision-makers** aiming to reduce churn and maximize customer lifetime value.  
+✔️ **Data analysts & data scientists** interested in predictive modeling for customer segmentation.  
+
+
+---
+
+## 📂 Dataset Description & Data Structure  
+
+### 📌 Data Source   
+- Size: 20 columns, 5630 rows  
+- Format: .csv  
+
+### 📊 Data Structure & Relationships  
+
+This project used 1 table:
+  <details>
+  <summary>Churn_prediction table</summary>
+
+| Column Name                        | Data Type | Description |
+|------------------------------------|----------|-------------|
+| CustomerID                         | int64    | Unique identifier for each customer |
+| Churn                              | int64    | Indicates if the customer has churned (1) or not (0) |
+| Tenure                             | int64    | Number of months the customer has been with the company |
+| PreferredLoginDevice               | object   | Device most frequently used by the customer to log in |
+| CityTier                           | int64    | Tier classification of the customer's city |
+| WarehouseToHome                    | float64  | Distance from the warehouse to the customer's home (in km) |
+| PreferredPaymentMode               | object   | Customer's most frequently used payment method |
+| Gender                             | object   | Customer's gender |
+| HourSpendOnApp                     | float64  | Average number of hours spent on the app per month |
+| NumberOfDeviceRegistered           | int64    | Total number of devices registered by the customer |
+| PreferredOrderCat                  | object   | Customer's most frequently ordered product category |
+| SatisfactionScore                   | int64    | Customer's satisfaction rating (scale from 1 to 10) |
+| MaritalStatus                      | object   | Customer's marital status |
+| NumberOfAddress                    | int64    | Number of addresses registered by the customer |
+| Complain                           | int64    | Indicates if the customer has made a complaint (1) or not (0) |
+| OrderAmountHikeFromLastYear        | float64  | Percentage increase in order amount compared to last year |
+| CouponUsed                         | float64  | Number of coupons used by the customer |
+| OrderCount                         | float64  | Total number of orders placed by the customer |
+| DaySinceLastOrder                  | float64  | Number of days since the last order was placed |
+| CashbackAmount                     | int64    | Cashback amount received by the customer |
+
+  </details>
+
+---
+
+## ⚒️ Main Process
+
+1️⃣ Data Cleaning & Preprocessing  
+<details>
+  <summary> Import libraries</summary>
+
+```python
+# Import libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+from sklearn import linear_model
+```
+
+  </details>
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
+```python
+# Load the dataset
+df = pd.read_csv('/content/drive/My Drive/Colab Notebooks/churn_prediction.csv')
+```
+
+![image](https://github.com/user-attachments/assets/1ec5b779-84f1-4217-926d-7cf4a08193fe)
+
+![image](https://github.com/user-attachments/assets/298bdd3b-d149-49eb-b253-6696238773e4)
+
+
+2️⃣ Exploratory Data Analysis (EDA)  
+
+
+3️⃣ SQL/ Python Analysis 
+
+ 
+
+---
+
+## 🔎 Final Conclusion & Recommendations  
+
+👉🏻 Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following:  
+
+📌 Key Takeaways:  
+✔️ Recommendation 1  
+✔️ Recommendation 2  
+✔️ Recommendation 3
+
+
+
 # Machine-Learning
 ## **Question 1:**
 
