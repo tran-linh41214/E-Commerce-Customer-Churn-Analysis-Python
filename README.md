@@ -420,6 +420,73 @@ OnlineRetail_Interpolate['DaySinceLastOrder'].isnull().sum()
 
 </details>
 
+4️⃣ Data Analysis  
+ ❓ Q1) ***Analyze the number of days since the last order by the customer to create targeted marketing campaigns and offer personalized discounts***  
+
+![image](https://github.com/user-attachments/assets/832f8c2c-d9d3-4441-b949-da7756ec2a95)
+
+![image](https://github.com/user-attachments/assets/c47cac33-9053-49c2-b5b3-eb063b080b1f)
+
+
+> ***The Majority of the customers fall into a value of 0 to 10 days since their last order, Hence, Targeting this segment would encourage them to reorder and reduce the 10 days cycle and increase sales.***
+
+❗ Churn customers  
+![image](https://github.com/user-attachments/assets/222ea0ec-685a-411b-808b-a70476edbdb5)
+
+
+  >***Approximately 50% of customers churn after 3 days of their last order while 75% of customers churn after 6 days of their last order, Moreover, on average, it takes customers from 3 to 4 days to churn after their last order***  
+
+❓ **Q2) Is there any difference in the buying behavior of male and female customers?**
+![image](https://github.com/user-attachments/assets/d8bc74c6-26f1-4367-a15b-0f6faf1c7be0)
+
+![image](https://github.com/user-attachments/assets/dbbe75e7-ec5b-4979-87f3-deff8d5373a5)  
+
+> ***Approximately 16,21% of male customers churned and yet only 13,07% on female customers were churned***
+
+*Further Analysis on the Gender behaviour*  
+👨 Male  
+![image](https://github.com/user-attachments/assets/b9ffb729-eec8-4273-83cc-44d62acc09fc)  
+
+![image](https://github.com/user-attachments/assets/c1bf9659-97d5-4af7-b2a4-d38fef483767)  
+![image](https://github.com/user-attachments/assets/d5680aa6-81f6-4cbc-9dcb-4d2bb626467e)
+
+![image](https://github.com/user-attachments/assets/5afa0b00-02b0-411f-acd4-d910366cf920)  
+
+average_order_per_male = 3.150848631797714  
+
+![image](https://github.com/user-attachments/assets/c158850a-5457-4d95-a01e-b387b73f6949)  
+
+
+👩 Female  
+
+![image](https://github.com/user-attachments/assets/c1024ac3-e9c0-4fc8-a8e0-0bb1fa20df42)
+![image](https://github.com/user-attachments/assets/8c803169-9745-4a61-99e4-641e24ab8233)  
+![image](https://github.com/user-attachments/assets/d2083e57-a87a-4b5b-b299-7a835fec8375)  
+![image](https://github.com/user-attachments/assets/0d4bfdd8-5117-43bc-b8e9-0feb5ca39211)  
+
+average_order_per_female = 3.3217568947906027  
+ 
+![image](https://github.com/user-attachments/assets/8b29253e-b8dd-44fe-8df7-f58eaf61163a)
+
+
+
+
+✅ ***Females and Males spend almost the same number of hours on app***  
+
+✅ ***Both genders have the same preferred payment mode***   
+
+✅ ***Both gender do have the same categories of interest***  
+
+
+✅ ***Although female customers are less than male customers but on average a female customer tends to have an average of 3.3397 order versus 3.1601 per male***  
+
+✅ ***Males have the share of the lion when it comes to the cash-back amount***
+
+
+
+
+
+
 ---
 
 ## 🔎 Final Conclusion & Recommendations  
