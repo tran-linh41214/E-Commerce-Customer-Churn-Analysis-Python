@@ -113,10 +113,312 @@ df = pd.read_csv('/content/drive/My Drive/Colab Notebooks/churn_prediction.csv')
 
 2️⃣ Exploratory Data Analysis (EDA)  
 
+  <details>
+  <summary>Figuring Out Null Values</summary>
 
-3️⃣ SQL/ Python Analysis 
+    
+| Column Name                  | Missing Values |
+|------------------------------|---------------|
+| CustomerID                   | 0             |
+| Churn                        | 0             |
+| Tenure                       | 264           |
+| PreferredLoginDevice         | 0             |
+| CityTier                     | 0             |
+| WarehouseToHome              | 251           |
+| PreferredPaymentMode         | 0             |
+| Gender                       | 0             |
+| HourSpendOnApp               | 255           |
+| NumberOfDeviceRegistered     | 0             |
+| PreferedOrderCat             | 0             |
+| SatisfactionScore            | 0             |
+| MaritalStatus                | 0             |
+| NumberOfAddress              | 0             |
+| Complain                     | 0             |
+| OrderAmountHikeFromLastYear  | 265           |
+| CouponUsed      |   256  |
+| OrderCount  |   258  |
+|  DaySinceLastOrder  |  307  |
+|  CashbackAmount  | 0 |
 
+  </details>
+
+- Quick Statistical Overview
+
+  Numeric Data Type  
+![image](https://github.com/user-attachments/assets/161acb08-3b4c-4927-a4b0-6f784ee4015b)  
+![image](https://github.com/user-attachments/assets/f5ae7069-6789-488f-83cb-2c465ffcfea5)
+
+
+Object Data Type
+
+![image](https://github.com/user-attachments/assets/146558d6-75c7-44f2-9ff6-b859710fe530)  
+
+- The dataset contains 20 columns, 7 of which has null values, listed as the following: Tenure, WarehouseToHome, HourSpendOnApp, OrderAmountHikeFromlastYear, CouponUsed, OrderCount, DaySinceLastOrder  
+
+- The dataset has no duplicate values on row level.  
+
+- All columns have the right data type (There's no need for data type conversion)  
+
+- Quick statistical summary indicates that there could be potential outliers in: Tenure, WarehouseToHome, SatisfactionScore, NumberOfAddress, CouponUsed, DaySinceLastOrder
+
+
+<details>
+<summary>Handling/Figuring out outliers</summary>
+
+  <details>
+  <summary>Analyze outliers for Tenure, WarehouseToHome, SatisfactionScore, NumberOfAddress, CouponUsed, DaySinceLastOrder</summary>  
+
+-  **Column Tenure**: Tenure column has extrem unlogical value below 0 and outliers starting from a value of 50.0+
+  ➡️ Excluding values above 50.0  
+  
+![image](https://github.com/user-attachments/assets/720f718b-d14b-412a-87c3-c3be0e1f9bc1)
+
+- **Column WarehouseToHome**:
+  ![image](https://github.com/user-attachments/assets/cde77c8b-2028-4afa-b1f4-54d3ede15f7a)
+
+Column WarehouseToHome has outliers on values 126.0 and 127.0
+➡️ Keep values less than 126.
+
+![image](https://github.com/user-attachments/assets/d51f19fa-90cd-40fa-b467-7dc26782ec7b)  
+- **Column SatisfactionScore**:
+  ![image](https://github.com/user-attachments/assets/4dd2e917-029e-4336-bcad-dabd41a20f9e)  
+
+➡️ There seems to be no extreme outliers, we will carry on with other columns  
+- **Column NumberOfAddress:**
+  ![image](https://github.com/user-attachments/assets/e94177df-f742-4de2-bd7d-c9c5be9848cd)
+
+➡️ Keep the values < 20  
+![image](https://github.com/user-attachments/assets/a8eab6e4-ff43-4349-bd6b-818a23a26a10)
+
+
+- **Column CouponUsed:**
+  ![image](https://github.com/user-attachments/assets/cf50cbc0-d584-472b-aa12-a22b927fa029)
+
+  ➡️ Outliers in column [CouponUsed] don't represent wrong measurement and they could provide useful information, Hence, I've decided to leave them
+
+- **Column DaySinceLastOrder**  
+
+![image](https://github.com/user-attachments/assets/be828b7d-95f1-4693-9fb3-4b403cd31042)  
+
+➡️ There are outliers yet since the column represents Recency of order then the outliers provide a relevant information and hence it is not problematic to leave them.
+  
+  </details>
+
+✅ **Outliers Conclusion:**  
+- As Expected, There were outliers in columns: Tenure, WarehouseToHome, NumberOfAddress, CouponUsed, DaySinceLastOrder  
+- Now, Let's make sure that the other columns don't contain outliers. Churn, CityTier, HoursSpendOnApp, NumberOfDeviceRegistered, Complain, OrderAmountHikeFromlastYear, CashbackAmount
+
+  <details>
+  <summary>Analyze outliers for other columns</summary>
+- **Column Churn:**  
+  ![image](https://github.com/user-attachments/assets/d41fb9cf-ad2b-40a9-af7c-e091ad7c736a)
+
+- **Column CityTier:**  
+
+![image](https://github.com/user-attachments/assets/7f69c4ab-5354-4fdb-8fcc-0ffe907672d3)  
+
+- **Column HoursSpendOnApp**  
+
+![image](https://github.com/user-attachments/assets/58037f33-5ef0-4ebe-a5b5-97f0d808bd0e)  
+
+![image](https://github.com/user-attachments/assets/62d0590a-0b2e-4cd3-a270-767a5b5a5a79)  
+
+=> keep the values more than 0.0 and less than 5.0
+
+![image](https://github.com/user-attachments/assets/4185a491-d030-4196-9803-b05f43662b3b)  
+
+- **Column NumberOfDeviceRegistered**  
+![image](https://github.com/user-attachments/assets/24aeab38-228d-40c2-82b2-4df961af21c1)  
+
+- **Column Complain:**
+
+  ![image](https://github.com/user-attachments/assets/261e3445-399d-4ba5-bd6e-1dac4c70f175)
+- **Column OrderAmountHikeFromlastYear**  
+![image](https://github.com/user-attachments/assets/eb41e577-c656-4315-89ea-b7b5f52a329a)
+
+![image](https://github.com/user-attachments/assets/364e0fbb-d8f4-4b24-832f-a0ce58868e52)  
+- **Column CashbackAmount**  
+![image](https://github.com/user-attachments/assets/005fbf6c-69ad-4042-86db-a4d8ac96b30e)  
+=> Since this column represents an average cash back amount on monthly basis, it is normal to be a fluctuated amount and hence the outliers could be left as it is.  
+
+  </details>
+  </details>
+
+
+
+
+<details>
+<summary>Handling/Figuring out null values and Handling/Figuring out wrong values</summary>
+
+![image](https://github.com/user-attachments/assets/8ed2c20b-52aa-4862-88f7-66beea751ce8)
+
+Figuring out unique values of each column => Nothing unusual.
+
+Replace the abbriviate in PreferredPaymentMode column:
+```python
+#PreferredPaymentMode
+OnlineRetail['PreferredPaymentMode'].unique()
+```
+
+```python
+#Handling 'COD' and 'CC' values
+#Replacing COD with Cash On Delivery
+OnlineRetail['PreferredPaymentMode'].replace('COD','Cash on Delivery', inplace=True) 
+
+#Replacing CC with Credit Card
+OnlineRetail['PreferredPaymentMode'].replace('CC','Credit Card', inplace=True) 
+
+#Replacing nan with Other
+OnlineRetail['PreferredPaymentMode'].fillna(value='Other', inplace=True)
+```
+
+</details>
+
+
+3️⃣ Feature Engineering  
+Feature Engineering: One Hot Encoding  
+```python
+#Turning Nominal Object columns into seperate columns
+OneHot_Columns = ['PreferredLoginDevice','PreferredPaymentMode','Gender','PreferedOrderCat','MaritalStatus']
+OnlineRetail = pd.get_dummies(OnlineRetail, columns= OneHot_Columns)
+```
+
+<details>
+<summary>Handling nulls</summary>
+
+  <details>
+  <summary>Method 1: Dropping nulls</summary>
+    
+ - Take a copy and drop nulls
+ - **Modeling: Decision Tree**  
+![image](https://github.com/user-attachments/assets/5d64aac2-520c-4b50-bec0-c014e3907c27)  
+  
+
+- **Modeling: Random Forest**
+
+  ![image](https://github.com/user-attachments/assets/9d427935-447d-446b-b017-5053c3fe6702)
+
+✅ **Method 1 Conclusion:**  
+Handling nulls through dropping them results in a not bad model, Yet, Let's try how the model would perform if we filled in the nulls.
+
+  </details>
+
+   <details>
+  <summary>Method 2: Filling nulls with Multivariate Imputation By Chained Equations algorithm</summary>
+
+```python
+#Taking a copy of columns with null values
+df_missing_columns = OnlineRetail.filter(
+    ['CustomerID','OrderAmountHikeFromlastYear','CouponUsed', 'OrderCount', 'DaySinceLastOrder'], axis=1).copy()
+
+#Defining MICE imputer and filling in missing values
+missing_imputer = IterativeImputer(estimator=linear_model.BayesianRidge(), n_nearest_features=None, 
+                                   imputation_order='ascending')
+df_missing_imputed = pd.DataFrame(missing_imputer.fit_transform(df_missing_columns), 
+                                  columns=df_missing_columns.columns)
+Cleaned_OnlineRetail = OnlineRetail.copy()
+Cleaned_OnlineRetail.drop(['OrderAmountHikeFromlastYear','CouponUsed','OrderCount', 'DaySinceLastOrder'], axis = 1 , inplace = True)
+OnlineRetail_MICE = Cleaned_OnlineRetail.set_index('CustomerID').join(df_missing_imputed.set_index('CustomerID'))
+OnlineRetail_MICE.reset_index(inplace=True)
+```
+
+- **Modeling: Decision Tree**  
+![image](https://github.com/user-attachments/assets/aa32cecf-cf2c-430c-869f-181a80f3d395)
+
+- **Modeling: Random Forest**
+![image](https://github.com/user-attachments/assets/55405ffa-51c5-478f-94d1-bb9e5d8a1ef8)
+
+✅ **Method 2 Conclusion:**   
+Decision Tree returned an OK result yet Method 1 was better, Yet, In Method 2 Random Forest, The model was off or can be considered inaccurate.  
+
+  </details>
+
+  <details>
+  <summary>Method 3: Filling nulls with interpolate in Pandas that could predict the nulls using the correlation with other columns</summary>
+- The nulls are handled first through distributions  
+
+  <details>
+  <summary>Handling nulls in the following columns: OrderAmountHikeLastYear, CouponUsed, OrderCount and DaySinceLastOrder</summary>
+
+- **Column: OrderAmountHikeFromlastYear**
+  ![image](https://github.com/user-attachments/assets/7c153b77-3534-416f-9f45-8df836e3a00b)
+
+```python
+OnlineRetail_Interpolate['OrderAmountHikeFromlastYear'].interpolate(method = 'linear', inplace=True)
+```
+*Making sure the column still has the same distribution*  
+![image](https://github.com/user-attachments/assets/46db18a4-8001-4df4-b4ff-5a20fac1b5ec)  
+
+```python
+#Validating the changes in nulls
+OnlineRetail_Interpolate['OrderAmountHikeFromlastYear'].isnull().sum()
+```
+=> 0 nulls
+- **Column: CouponUsed**
+![image](https://github.com/user-attachments/assets/b7e815d6-d7c8-4f00-ad77-234457eb2be2)
+```python
+OnlineRetail_Interpolate['CouponUsed'].interpolate(method = 'linear', inplace=True)
+```
+*Making sure the column still has the same distribution*    
+
+```python
+#Validating the changes in nulls
+OnlineRetail_Interpolate['CouponUsed'].isnull().sum()
+```
+=> 0 nulls
+
+- **Column: OrderCount**
+  ![image](https://github.com/user-attachments/assets/906ed333-7965-4cf4-afdb-8cc311ffba59)
  
+```python
+OnlineRetail_Interpolate['OrderCount'].interpolate(method = 'linear', inplace=True)
+```
+*Making sure the column still has the same distribution*   
+```python
+#Validating the changes in nulls
+OnlineRetail_Interpolate['OrderCount'].isnull().sum()
+```
+=> 0 nulls
+
+- **Column: DaySinceLastOrder**
+  ![image](https://github.com/user-attachments/assets/5b51974d-45fd-4fe3-b797-407715365c22)
+
+```python
+OnlineRetail_Interpolate['DaySinceLastOrder'].interpolate(method = 'linear', inplace=True)
+```
+*Making sure the column still has the same distribution*   
+```python
+#Validating the changes in nulls
+OnlineRetail_Interpolate['DaySinceLastOrder'].isnull().sum()
+```
+   </details>
+   
+- **Modeling: Decision Tree**  
+![image](https://github.com/user-attachments/assets/30c8ec70-8aff-4d7e-8f7f-095177973adc)
+- **Modeling: Random Forest**
+  ![image](https://github.com/user-attachments/assets/afaa9c55-214b-4c0a-9ef2-78f800a650ed)
+    </details>
+
+</details>
+
+
+
+---
+
+
+**Modeling Conclusion**
+- We have used Classification Report as a matric of model evaluation to use **Recall** in particular because we want to evaluate the maximum number of churned customers out of the total churned customers.  
+
+- Out of the 2 models **(Decision Tree, Random Forest)** in the 3 different null handling methods, We figured out that Random Forest has the best **Recall Percentage**, Hence, We have decided to use **Random Forest** as our final model.  
+
+- Finally, It terms of **Recall Score** of the 3 null handling methods, There's a close score between **Dropping Nulls** and **Interpolate** and since **Interpolate** is better in terms of keeping rows on a larger scale dataset, We figured out that it is the best way to use in this case.  
+
+<details>
+<summary>Figuring Out Duplicate Values</summary>
+
+
+
+</details>
 
 ---
 
