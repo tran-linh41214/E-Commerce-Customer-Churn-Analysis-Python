@@ -428,7 +428,7 @@ OnlineRetail_Interpolate['DaySinceLastOrder'].isnull().sum()
 ![image](https://github.com/user-attachments/assets/c47cac33-9053-49c2-b5b3-eb063b080b1f)
 
 
-> ***The Majority of the customers fall into a value of 0 to 10 days since their last order, Hence, Targeting this segment would encourage them to reorder and reduce the 10 days cycle and increase sales.***
+➡️ ***The Majority of the customers fall into a value of 0 to 10 days since their last order, Hence, Targeting this segment would encourage them to reorder and reduce the 10 days cycle and increase sales.***
 
 ❗ Churn customers  
 ![image](https://github.com/user-attachments/assets/222ea0ec-685a-411b-808b-a70476edbdb5)
@@ -482,97 +482,78 @@ average_order_per_female = 3.3217568947906027
 
 ✅ ***Males have the share of the lion when it comes to the cash-back amount***
 
+❓ **Q3) Provide key insights on why our customers churn and possible churn indicators**  
+
+Correlation between churn and other columns  
+![image](https://github.com/user-attachments/assets/cf922175-da9d-4e0d-ad7e-33add56405c0)  
+
+The distribution tenure values for not churned customers  
+![image](https://github.com/user-attachments/assets/de9f6625-3cac-4f18-a001-613dc7b49221)  
+
+The distribution tenure values for churned customers  
+![image](https://github.com/user-attachments/assets/3a1049b2-a692-48a7-a7c2-81f20671081b)
+
+
+- Average Tenure for a churned customer: 3.59  
+- Average tenure for a current customer: 11.81
 
 
 
+> ***Tenure is the first churn indicator, The average tenure of churned customer is 3.59 vs 11.81 for not churned customers, Hence, We should pay more attention to our new customers especially in their first 3.59 tenure period, In conclusion, the higher the tenure the higher the loyality the less churn possibility***  
+
+| Complain | Churned=1 | Churned=0 | Total |
+|----------|----------|----------|-------|
+| 1        | 380      | 996      | 1376  |
+| 0        | 344      | 3125     | 3469  |
+| **Total**  | **724**  | **4121**  | **4845**  |
+
+
+
+> ***Approximately 50% of the churned customers complained and hence we should pay attention to complains as it is the 2nd churn reason***  
+
+❓ **Q4) Analyze the distance between the warehouse and the customer's home and check if it relates to complains?**  
+
+- The distribution of WarehouseToHome values for current complaining customers  
+![image](https://github.com/user-attachments/assets/518119b9-fd41-4704-9a8c-6301aa6c2a47)
+
+- The distribution of WarehouseToHome values for current non-complaining customers
+  ![image](https://github.com/user-attachments/assets/c38beff9-b393-4390-a541-8a37e135f27d)
+
+![image](https://github.com/user-attachments/assets/70e48c9c-3680-4d90-9328-8d022d416ace)  
+
+![image](https://github.com/user-attachments/assets/a418d4dc-6173-4765-8405-1b4f3efc55d9)
+
+
+
+
+➡️ ***The majority of the customers are in the distance between 5 to 35 kms from warehouse and hence there's no relation between complains and warehouse to home distance***  
+
+❓ **Q5) Does the number of addresses added by customers impact the churn rate?**  
+
+- Checking relation between address and number of churn customers 
+
+![image](https://github.com/user-attachments/assets/f595a045-056a-4f0a-ac20-86ab1d5bf6b1)  
+
+- Checking relation between address and number of not churn customers   
+![image](https://github.com/user-attachments/assets/f3c63a08-96b4-4f54-848b-65a0647b2d5d)
+
+![image](https://github.com/user-attachments/assets/75a71b90-3b2d-43f7-9094-2a78acf0b65c)  
+![image](https://github.com/user-attachments/assets/80c43ac8-772e-45a8-9de1-344eff033253)  
+
+
+➡️ ***In terms of Number of addresses for churned and not churned customers, There's in fact no difference and hence the number of addresses doesn't have an impact on the churn rate***
 
 
 ---
 
 ## 🔎 Final Conclusion & Recommendations  
+    
 
-👉🏻 Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following:  
-
-📌 Key Takeaways:  
-✔️ Recommendation 1  
-✔️ Recommendation 2  
-✔️ Recommendation 3
-
+✔️ Follow up the customers within 3-6 days since their last order to reduce the churn rate, AS approximately 50% of customers churn after 3 days of their last order, And approximately 75% churn after 6 days of their last order.  
+✔️ Offer promos for credit and debit card holders, as they represent the most frequently used payment method for customers whether they’re males or females.  
+✔️ Upsell a specific category of items which is Laptop & Accessory as the highest number of sales was directed toward that category by males and females.    
+✔️ Initiate a cash back system on debit and credit card as customers with high cash back percentage tend to not churn.   
+✔️ Enhance the complain handling department as 50% of churned customer has already complained before they churn.  
 
 
-# Machine-Learning
-## **Question 1:**
-
-1. Churned users usually are new users &rarr; Provide more promotion for new users, or increase the new users experience
-2. Churned users usually receive less cashback than not churn &rarr; Increase the cashback ratio
-3. Churned users complain more &rarr; deep dive what these churned users complain about, and provide the solution
-
-As Feature Importance show, we can see these features can have high relation with target columns:
-* Tenure
-* Cashback amount
-* Distance from warehouse to home
-* Complain
-* Days since Last order
-
-&rarr; We will analyse and visualize these features for more insights.
-#### **1.4 Analyse features from initial Random Forest model:**
-
-* Tenure
-* Cashback amount
-* Distance from warehouse to home
-* Complain
-* Days since Last order
-##### **1.4.1 Tenure**  New users are churned more than old users (tenure = 0 or 1)
-![image](https://github.com/user-attachments/assets/62293f54-2df8-4195-8fca-63947b5382a2)
-
-##### **1.4.2 Warehouse to home**  Not significantly related
-![image](https://github.com/user-attachments/assets/47023f6e-4cd9-4882-8d76-c31d00ad6970)
-
-For both churn & not churn:
-* The median, pt25, mean, pt75 is quite the same --> The centralize of data is the same
-* For not churn, data has some outliers --> This can be not significant enough to consider it as an insight for not churn
-
-&rarr; There're no strong evidences show that there different between churn and not churn for warehousetohome --> We will exclude this features when apply model for not being bias.
-##### **1.4.3 Days since last order:** churn users with complain = 1 have higher days since orders than churned users with complain = 0  
-![image](https://github.com/user-attachments/assets/f7c936a1-9757-4a65-ae11-38e85e3d97fa)
-
-From this chart, we see for churned users, they had orders recently (the day since last order less than not churned users) --> This quite strange, we should monitor more features for this insight (satisfaction_score, complain,..)
-![image](https://github.com/user-attachments/assets/24707f49-28f7-46a2-a908-7c93d70763c8)
-
-For churned users with complain = 1, they had daysincelastorder higher than churn users with compain = 0
-##### **1.4.4 Cashback amount**  Churn users recevied cashback amount less than not churn users.
-![image](https://github.com/user-attachments/assets/1cf77adf-4c4d-470d-8a86-53068b3fa4ab)
-
-Churn users recevied cashback amount less than not churn users.
-##### **1.4.5 Complain** The number of users complain on churn is higher than not churn
-![image](https://github.com/user-attachments/assets/f156facf-cfc5-4e2a-a601-236f72a97fc5)
-
-##### **1.4.6 Conclusion & Suggestion**
-1. Churned users usually are new users &rarr; Provide more promotion for new users, or increase the new users experience
-2. Churned users usually receive less cashback than not churn &rarr; Increase the cashback ratio
-3. Churned users complain more &rarr; deep dive what these churned users complain about, and provide the solution
-## **Question 2:**
-
-* Use K-Means to clustering churn-users groups.
-* Find the insight between the groups
-### **1. Get the data prepared**
-
-We will get all features of churned users for clustering
-#Prepare data:
-df_churned = df[df['churn']==1]
-df_churned.drop(columns = ['customerid','churn'],inplace=True)
-print(df_churned.shape)
-df_churned.head(2)
-### **2. Apply KMeans model**
-#### 2.1. Choosing K:
-![image](https://github.com/user-attachments/assets/b6283998-703d-4fae-abae-491d053380c2)
-
-- When applying Elbow method, we see there're no clear elbow points.
-- Our hypothesis is that the data is sporadic, which means there're no clearly common patterns between data, and we can not cluster them into groups.
-
-## Our suggestions for next steps:
-
-* We can collect more data of churned users: by collect real data or using our above supervised model to predict and use it as ground truth data for clustering model
-
-* Business can offer the promotion for all churned users and collect results. These results can be used as features in the data for the next model.
 
