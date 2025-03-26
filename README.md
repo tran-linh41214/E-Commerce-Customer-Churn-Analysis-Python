@@ -431,17 +431,17 @@ OnlineRetail_Interpolate['DaySinceLastOrder'].isnull().sum()
 ➡️ ***The Majority of the customers fall into a value of 0 to 10 days since their last order, Hence, Targeting this segment would encourage them to reorder and reduce the 10 days cycle and increase sales.***
 
 ❗ Churn customers  
-![image](https://github.com/user-attachments/assets/222ea0ec-685a-411b-808b-a70476edbdb5)
+![image](https://github.com/user-attachments/assets/222ea0ec-685a-411b-808b-a70476edbdb5)  
 
 
-  >***Approximately 50% of customers churn after 3 days of their last order while 75% of customers churn after 6 days of their last order, Moreover, on average, it takes customers from 3 to 4 days to churn after their last order***  
+➡️ ***Approximately 50% of customers churn after 3 days of their last order while 75% of customers churn after 6 days of their last order, Moreover, on average, it takes customers from 3 to 4 days to churn after their last order***  
 
 ❓ **Q2) Is there any difference in the buying behavior of male and female customers?**
-![image](https://github.com/user-attachments/assets/d8bc74c6-26f1-4367-a15b-0f6faf1c7be0)
+![image](https://github.com/user-attachments/assets/d8bc74c6-26f1-4367-a15b-0f6faf1c7be0)  
 
 ![image](https://github.com/user-attachments/assets/dbbe75e7-ec5b-4979-87f3-deff8d5373a5)  
 
-> ***Approximately 16,21% of male customers churned and yet only 13,07% on female customers were churned***
+➡️ ***Approximately 16,21% of male customers churned and yet only 13,07% on female customers were churned***
 
 *Further Analysis on the Gender behaviour*  
 👨 Male  
@@ -495,11 +495,11 @@ The distribution tenure values for churned customers
 
 
 - Average Tenure for a churned customer: 3.59  
-- Average tenure for a current customer: 11.81
+- Average tenure for a current customer: 11.81  
 
 
 
-> ***Tenure is the first churn indicator, The average tenure of churned customer is 3.59 vs 11.81 for not churned customers, Hence, We should pay more attention to our new customers especially in their first 3.59 tenure period, In conclusion, the higher the tenure the higher the loyality the less churn possibility***  
+➡️ ***Tenure is the first churn indicator, The average tenure of churned customer is 3.59 vs 11.81 for not churned customers, Hence, We should pay more attention to our new customers especially in their first 3.59 tenure period, In conclusion, the higher the tenure the higher the loyality the less churn possibility***  
 
 | Complain | Churned=1 | Churned=0 | Total |
 |----------|----------|----------|-------|
@@ -509,7 +509,7 @@ The distribution tenure values for churned customers
 
 
 
-> ***Approximately 50% of the churned customers complained and hence we should pay attention to complains as it is the 2nd churn reason***  
+➡️ ***Approximately 50% of the churned customers complained and hence we should pay attention to complains as it is the 2nd churn reason***  
 
 ❓ **Q4) Analyze the distance between the warehouse and the customer's home and check if it relates to complains?**  
 
