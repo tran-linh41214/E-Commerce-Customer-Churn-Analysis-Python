@@ -521,8 +521,6 @@ The distribution tenure values for churned customers
 
 ![image](https://github.com/user-attachments/assets/70e48c9c-3680-4d90-9328-8d022d416ace)  
 
-![image](https://github.com/user-attachments/assets/a418d4dc-6173-4765-8405-1b4f3efc55d9)
-
 
 
 
