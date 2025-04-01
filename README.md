@@ -1,4 +1,4 @@
-# 📊 Project Title: E-Commerce Customer Churn Analysis   
+# 📊 Project Title: E-Commerce Customer Churn Analysis | PYTHON  
 Author: Linh Tran  
 Tools Used: Python  
 
